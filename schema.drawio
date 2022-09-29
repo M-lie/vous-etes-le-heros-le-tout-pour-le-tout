@@ -244,6 +244,7 @@
                         <Array as="points">
                             <mxPoint x="800" y="1340"/>
                             <mxPoint x="800" y="190"/>
+                            <mxPoint x="770" y="190"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -259,6 +260,15 @@
                 <mxCell id="58" value="Non" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;fontColor=#000000;labelBackgroundColor=#FFFFFF;" parent="57" connectable="0" vertex="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="102" style="edgeStyle=none;html=1;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#000000;rounded=0;" edge="1" parent="1" source="56">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="760" y="190" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="800" y="1675"/>
+                            <mxPoint x="800" y="190"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="59" value="Il ne vous fait plus confiance, vous et vos amis mourrez" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
