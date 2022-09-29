@@ -331,6 +331,51 @@
                 <mxCell id="83" value="Il a découvert que vous aviez les clés et vous mourrez" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="653.75" y="1325.5" width="92.5" height="30" as="geometry"/>
                 </mxCell>
+                <mxCell id="85" value="chapter1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="200" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="chapter2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="378" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="chapter3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="670.01" y="364" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="chapter4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="530" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="chapter6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="690" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="chapter5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="704" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="chapter7" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="860" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="chapter9" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1034" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="chapter10" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="1020" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="chapter12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1361" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="chapter14" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1520" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="chapter11" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1190" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="chapter13" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="1350" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="chapter16" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1695" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="chapter17" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="1854" width="60" height="30" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
