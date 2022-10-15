@@ -48,7 +48,7 @@ img {
     justify-content: space-between;
 }
 
-.bouton {
+.btn {
     width: 130px;
     height: 30px;
     background-color: #000000;
@@ -58,16 +58,16 @@ img {
     align-items: center;
 }
 
-.bouton:hover {
+.btn:hover {
     background-color: #171717;
 }
 
-.bouton p {
+.btn button {
     font-family: 'Fira Sans', sans-serif;
     font-weight: lighter;
     color: #EADEDA;
 }
 
-.bouton p:hover {
+.btn button:hover {
     color: #BFB8AD;
 }

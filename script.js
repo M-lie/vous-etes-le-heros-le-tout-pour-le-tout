@@ -188,6 +188,27 @@ let chaptersObj = {
 
 function goToChapter(chapterName){ 
     console.log(chaptersObj[chapterName]["subtitle"]);
-    console.log(chaptersObj[chapterName]["text"])
+    console.log(chaptersObj[chapterName]["text"]);
+    console.log(chaptersObj[chapterName]["img"]);
+
+    const titre = document.querySelector("h2");
+    titre.innerText = chaptersObj[chapterName]["subtitle"];
+
+    const texte = document.querySelector("p");
+    texte.innerText = chaptersObj[chapterName]["text"];
+
+    const image = document.querySelector(".image");
+    image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
+
+    for (i=0; i<chaptersObj[chapterName].options.length; i++) {
+        console.log(chaptersObj[chapterName].options[i].action);
+        console.log(chaptersObj[chapterName].options[i].text);
+
+        const bouton = document.querySelector(".barre");
+        bouton.innerHTML = `<button class="btn" onclick="${chaptersObj[chapterName].options[i].action}">${chaptersObj[chapterName].options[i].text}</button>`;
+    };
 }
+
+
+
 
