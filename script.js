@@ -213,5 +213,21 @@ function goToChapter(chapterName){
 
 goToChapter("chapter1");
 
+let scissorsFounded = false;
+function scissors() {
+    scissorsFounded = true;
+    goToChapter("chapter7");
+}
 
+function scissorsFound() {
+    if (scissorsFounded == true) {
+        goToChapter("chapter9");
+    } else {
+        goToChapter("chapter9");
+    }
+}
 
+function scissorsNotFound() {
+    scissorsFounded = false;
+    goToChapter("chapter18");
+}
