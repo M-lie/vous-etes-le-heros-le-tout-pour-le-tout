@@ -48,26 +48,16 @@ img {
     justify-content: space-between;
 }
 
-.btn {
+button {
     width: 130px;
     height: 30px;
-    background-color: #000000;
+    background-color: #00000062;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn:hover {
-    background-color: #171717;
-}
-
-.btn button {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: lighter;
-    color: #EADEDA;
-}
-
-.btn button:hover {
-    color: #BFB8AD;
+button:hover {
+    background-color: #171717c0;
 }

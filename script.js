@@ -53,10 +53,10 @@ let chaptersObj = {
             action: "goToChapter('chapter6')",
         }, {
             text: "Fouiller le bureau", 
-            action: "goToChapter('chapter7')",
+            action: "scissorsFound()",
         }, {
             text: "Appeler les secours", 
-            action: "goToChapter('chapter8')",
+            action: "scissorsStatus()",
         }]
     },
     chapter6: {
@@ -167,7 +167,7 @@ let chaptersObj = {
             action: "goToChapter('chapter17')",
         }, {
             text: "Non", 
-            action: "goToChapter('chapter18')",
+            action: "scissorsNotFound()",
         }]
     },
     chapter17: {
@@ -200,15 +200,37 @@ function goToChapter(chapterName){
     const image = document.querySelector(".image");
     image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
 
-    for (i=0; i<chaptersObj[chapterName].options.length; i++) {
-        console.log(chaptersObj[chapterName].options[i].action);
-        console.log(chaptersObj[chapterName].options[i].text);
 
-        const bouton = document.querySelector(".barre");
-        bouton.innerHTML = `<button class="btn" onclick="${chaptersObj[chapterName].options[i].action}">${chaptersObj[chapterName].options[i].text}</button>`;
+    let barre = document.querySelector(".barre");
+    barre.innerHTML = "";
+
+    for (element of chaptersObj[chapterName]["options"]) {
+        let bouton = document.createElement("button");
+        bouton.setAttribute("onclick", element["action"]);
+        bouton.setAttribute("type", "button");
+        bouton.appendChild(document.createTextNode(element["text"]));
+        barre.appendChild(bouton);
     };
 }
 
+goToChapter("chapter1");
 
+let scissorsFounded = false;
+function scissorsFound() {
+    scissorsFounded = true;
+    goToChapter("chapter7");
+}
 
+function scissorsStatus() {
+    if (scissorsFounded == true) {
+        goToChapter("chapter9");
+    } else {
+        goToChapter("chapter9");
+    }
+}
+
+function scissorsNotFound() {
+    scissorsFounded = false;
+    goToChapter("chapter18");
+}
 
