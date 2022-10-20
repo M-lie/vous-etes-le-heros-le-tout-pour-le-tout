@@ -38,7 +38,7 @@ let chaptersObj = {
     chapter4: {
         subtitle: "À toute allure",
         text: "Vous l'avez surpris, il a appuyé sur la détente. Vous mourrez donc d'une balle dans le dos. Vous avez échoué.",
-        img: "assets/chapitre_mort.jpg",
+        img: "assets/chapitre_mort.png",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -134,7 +134,7 @@ let chaptersObj = {
     chapter13: {
         subtitle: "Toute crainte doit être résolue",
         text: "Vous avez osé lui désobéir malgré l'arme en sa possession, il vous trouve courageux, mais à également peur que vous ruiniez son braquage. Il vous tue donc. Vous avez échoué.",
-        img: "assets/chapitre_mort.jpg",
+        img: "assets/chapitre_mort.png",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -152,7 +152,7 @@ let chaptersObj = {
     chapter15: {
         subtitle: "Toute vérité finie par être découverte",
         text: "Il entend les bruits des clés trimbalés dans la poche droite de votre pantalon lorsque vous vous déplacez. Malheureusement, l'homme vous a ainsi démasqué, puis, sous la colère, vous a tué. Vous avez échoué.",
-        img: "assets/chapitre_mort.jpg",
+        img: "assets/chapitre_mort.png",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -178,7 +178,7 @@ let chaptersObj = {
     chapter18: {
         subtitle: "Tout ne se vaut pas",
         text: "Le braqueur ne semble pas être capable de vous faire confiance. Il décide ainsi de tuer vous et vos amis. Vous avez échoué.",
-        img: "assets/chapitre_mort.jpg",
+        img: "assets/chapitre_mort.png",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -189,7 +189,6 @@ let chaptersObj = {
 function goToChapter(chapterName){ 
     console.log(chaptersObj[chapterName]["subtitle"]);
     console.log(chaptersObj[chapterName]["text"]);
-    console.log(chaptersObj[chapterName]["img"]);
 
     const titre = document.querySelector("h2");
     titre.innerText = chaptersObj[chapterName]["subtitle"];
@@ -234,3 +233,7 @@ function scissorsNotFound() {
     goToChapter("chapter18");
 }
 
+function scissorsNotFound() {
+    scissorsFounded = false;
+    goToChapter("chapter18");
+}
