@@ -39,6 +39,7 @@ let chaptersObj = {
         subtitle: "À toute allure",
         text: "Vous l'avez surpris, il a appuyé sur la détente. Vous mourrez donc d'une balle dans le dos. Vous avez échoué.",
         img: "assets/chapitre_mort.png",
+        video: "assets/chapitre_mort.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -63,6 +64,7 @@ let chaptersObj = {
         subtitle: "Tout est perdu",
         text: "Comme vous n'avez rien fait pour contrer le braqueur, il a réussi à s'échapper avec l'argent. Vous avez échoué.",
         img: "assets/chapitre_enfui.jpg",
+        video: "assets/chapitre_enfui.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -102,6 +104,7 @@ let chaptersObj = {
         subtitle: "Tout est fini",
         text: "Le braqueur a eu le temps de s'enfuir avec l'argent puisque vous n'avez rien fait. Vous avez échoué.",
         img: "assets/chapitre_enfui.jpg",
+        video: "assets/chapitre_enfui.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -135,6 +138,7 @@ let chaptersObj = {
         subtitle: "Toute crainte doit être résolue",
         text: "Vous avez osé lui désobéir malgré l'arme en sa possession, il vous trouve courageux, mais à également peur que vous ruiniez son braquage. Il vous tue donc. Vous avez échoué.",
         img: "assets/chapitre_mort.png",
+        video: "assets/chapitre_mort.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -153,6 +157,7 @@ let chaptersObj = {
         subtitle: "Toute vérité finie par être découverte",
         text: "Il entend les bruits des clés trimbalés dans la poche droite de votre pantalon lorsque vous vous déplacez. Malheureusement, l'homme vous a ainsi démasqué, puis, sous la colère, vous a tué. Vous avez échoué.",
         img: "assets/chapitre_mort.png",
+        video: "assets/chapitre_mort.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -163,22 +168,20 @@ let chaptersObj = {
         text: "Votre plan nécessite une arme pour pouvoir attaquer l'homme armé. Avez-vous la paire de ciseaux?",
         img: "assets/chapitre_16.png",
         options: [{
-            text: "Oui", 
-            action: "goToChapter('chapter17')",
-        }, {
-            text: "Non", 
-            action: "scissorsNotFound()",
+            text: "Vérifier", 
+            action: "scissorsPossession()",
         }]
     },
     chapter17: {
         subtitle: "Tous pour un, Un pour tous",
-        text: "Il a le dos viré contre vous, vous profitez de cette opportunité pour le poignardez dans le dos avec la paire de ciseaux que vous aviez trouvé au début. Vous vous servez de ce moment de vulnérabilité dont il fait preuve pour sauvez tous les détenus. Les policiers arrivent enfin. ILs accourent dans la banque pour attraper le braqueur et le coffrer. Vous avez réussi!",
+        text: "Il a le dos viré contre vous, vous profitez de cette opportunité pour le poignardez dans le dos avec la paire de ciseaux que vous aviez trouvé au début. Vous vous servez de ce moment de vulnérabilité dont il fait preuve pour sauvez tous les détenus. Les policiers arrivent enfin. Ils accourent dans la banque pour attraper le braqueur et le coffrer. Vous avez réussi!",
         img: "assets/chapitre_17.jpg"
     },
     chapter18: {
         subtitle: "Tout ne se vaut pas",
-        text: "Le braqueur ne semble pas être capable de vous faire confiance. Il décide ainsi de tuer vous et vos amis. Vous avez échoué.",
+        text: "Le braqueur ne semble pas être capable de vous faire confiance. Puisque vous n'avez aucune arme pour vous défrendre, il parvient à tuer vous et vos amis sans difficulté. Vous avez échoué.",
         img: "assets/chapitre_mort.png",
+        video: "assets/chapitre_mort.mp4",
         options: [{
             text: "Recommencer", 
             action: "goToChapter('chapter1')",
@@ -199,20 +202,39 @@ function goToChapter(chapterName){
     const image = document.querySelector(".image");
     image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
 
-
     let barre = document.querySelector(".barre");
     barre.innerHTML = "";
 
-    for (element of chaptersObj[chapterName]["options"]) {
+    for (const element of chaptersObj[chapterName]["options"]) {
         let bouton = document.createElement("button");
         bouton.setAttribute("onclick", element["action"]);
         bouton.setAttribute("type", "button");
         bouton.appendChild(document.createTextNode(element["text"]));
         barre.appendChild(bouton);
     };
+
+    if (chaptersObj[chapterName].video) {
+        image.innerHTML = `<video src="${chaptersObj[chapterName].video}" loop muted autoplay></video>`;
+    } else {
+        image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
+    };
+
+    const btns = document.querySelectorAll(".btn");
+    const effet = document.querySelector("audio");
+    const sources = document.querySelector("audio src")
+
+    for(const btn of btns) {   
+    btn.addEventListener("click", function() {
+        effet.play();
+    });
+    }
 }
 
 goToChapter("chapter1");
+
+
+/*À chaque fois que votre fonction goToChapter est appelée, sauvegardez dans localStorage le nom de la propriété dans chaptersObj correspondant au chapitre à afficher. */
+
 
 let scissorsFounded = false;
 function scissorsFound() {
@@ -224,16 +246,14 @@ function scissorsStatus() {
     if (scissorsFounded == true) {
         goToChapter("chapter9");
     } else {
-        goToChapter("chapter9");
+        goToChapter("chapter8");
     }
 }
 
-function scissorsNotFound() {
-    scissorsFounded = false;
-    goToChapter("chapter18");
-}
-
-function scissorsNotFound() {
-    scissorsFounded = false;
-    goToChapter("chapter18");
+function scissorsPossession() {
+    if (scissorsFounded == true) {
+        goToChapter("chapter17");
+    } else {
+        goToChapter("chapter18");
+    }
 }

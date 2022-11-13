@@ -41,6 +41,11 @@ img {
     height: 52%;
 }
 
+video {
+    margin: 27px;
+    width: 91%;
+}
+
 .barre {
     width: 90%;
     margin: 0px 30px;
