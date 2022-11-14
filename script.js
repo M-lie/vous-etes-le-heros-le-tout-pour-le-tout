@@ -211,6 +211,7 @@ function goToChapter(chapterName){
         bouton.setAttribute("type", "button");
         bouton.appendChild(document.createTextNode(element["text"]));
         barre.appendChild(bouton);
+        localStorage.setItem("chaptersObj", chapterName);
     };
 
     if (chaptersObj[chapterName].video) {
@@ -219,27 +220,23 @@ function goToChapter(chapterName){
         image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
     };
 
-    const btns = document.querySelectorAll(".btn");
-    const effet = document.querySelector("audio");
-    const sources = document.querySelector("audio src")
+    const btns = document.querySelectorAll("button");
+    const effet = new Audio("assets/effet.mp3");
 
-    for(const btn of btns) {   
-    btn.addEventListener("click", function() {
+    for(const button of btns){
+    button.addEventListener("click", function() {
         effet.play();
     });
-    }
+    };
 }
 
 goToChapter("chapter1");
-
-
-/*À chaque fois que votre fonction goToChapter est appelée, sauvegardez dans localStorage le nom de la propriété dans chaptersObj correspondant au chapitre à afficher. */
-
 
 let scissorsFounded = false;
 function scissorsFound() {
     scissorsFounded = true;
     goToChapter("chapter7");
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 }
 
 function scissorsStatus() {
@@ -248,6 +245,7 @@ function scissorsStatus() {
     } else {
         goToChapter("chapter8");
     }
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 }
 
 function scissorsPossession() {
@@ -256,4 +254,5 @@ function scissorsPossession() {
     } else {
         goToChapter("chapter18");
     }
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 }
