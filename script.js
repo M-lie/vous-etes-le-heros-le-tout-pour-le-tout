@@ -90,7 +90,7 @@ let chaptersObj = {
     },
     chapter9: {
         subtitle: "Tout près",
-        text: "Lorsque vous cherchez désespérement une solution pour vous opposez au braqueur, vous levez votre tête vers les airs et appercevez une trapper au plafond. Prendrez-vous le risque de vous faire attraper?/Ferez-vous face au danger?",
+        text: "Lorsque vous cherchez désespérement une solution pour vous opposez au braqueur, vous levez votre tête vers les airs et appercevez une trappe au plafond. Ferez-vous face au danger?",
         img: "assets/chapitre_9.jpg",
         options: [{
             text: "Rester dans le bureau", 
