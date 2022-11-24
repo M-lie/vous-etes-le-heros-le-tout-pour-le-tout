@@ -244,7 +244,7 @@ goToChapter("chapter1");
 
 let scissorsFounded = false;
 
-let scissorsExist = localStorage.getIten("scissorsFounded")
+let scissorsExist = localStorage.getItem("scissorsFounded")
 if (scissorsExist==null) {
     scissorsFounded = false;
 } else {
