@@ -214,7 +214,7 @@ function goToChapter(chapterName){
         localStorage.setItem("chaptersObj", chapterName);
     };
 
-    if (chaptersObj[chapterName].video) {
+    if (chaptersObj[chapterName].video!=undefined) {
         image.innerHTML = `<video src="${chaptersObj[chapterName].video}" loop muted autoplay></video>`;
     } else {
         image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
@@ -225,14 +225,32 @@ function goToChapter(chapterName){
 
     for(const button of btns){
     button.addEventListener("click", function() {
+        effet.currentTime = 0;
         effet.play();
     });
+    };
+
+    let chapterExist = localStorage.getItem("chaptersObj");
+    if (chapterExist==null) {
+        goToChapter("chapter1");
+        console.log("chapter1");
+    } else {
+        goToChapter(chapterExist);
+        console.log(chapterExist);
     };
 }
 
 goToChapter("chapter1");
 
 let scissorsFounded = false;
+
+let scissorsExist = localStorage.getItem("scissorsFounded");
+if (scissorsExist==null) {
+    scissorsFounded = false;
+} else {
+    scissorsFounded=Boolean(scissorsFounded);
+}
+
 function scissorsFound() {
     scissorsFounded = true;
     goToChapter("chapter7");
@@ -256,3 +274,4 @@ function scissorsPossession() {
     }
     localStorage.setItem("scissorsFounded", scissorsFounded);
 }
+
