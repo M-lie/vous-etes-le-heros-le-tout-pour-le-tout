@@ -248,14 +248,14 @@ let scissorsExist = localStorage.getItem("scissorsFounded");
 if (scissorsExist==null) {
     scissorsFounded = false;
 } else {
-    scissorsFounded=Boolean(scissorsFounded);
-}
-
+    scissorsFounded=Boolean(scissorsFounded)
+};
+    
 function scissorsFound() {
     scissorsFounded = true;
     goToChapter("chapter7");
     localStorage.setItem("scissorsFounded", scissorsFounded);
-}
+};
 
 function scissorsStatus() {
     if (scissorsFounded == true) {
@@ -264,7 +264,7 @@ function scissorsStatus() {
         goToChapter("chapter8");
     }
     localStorage.setItem("scissorsFounded", scissorsFounded);
-}
+};
 
 function scissorsPossession() {
     if (scissorsFounded == true) {
@@ -273,5 +273,4 @@ function scissorsPossession() {
         goToChapter("chapter18");
     }
     localStorage.setItem("scissorsFounded", scissorsFounded);
-}
-
+};
