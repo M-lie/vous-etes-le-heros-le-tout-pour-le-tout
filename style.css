@@ -14,11 +14,12 @@ html, body {
 .game {
     width: 600px;
     height: 700px;
+    padding: 30px 0px;
     background-color: #FE0202;
 }
 
 h1 {
-    margin: 30px 0px 0px 0px;
+    margin: 0;
     font-family: 'Public Sans', sans-serif;
     font-size: 45px;
     text-align: center; 
@@ -53,6 +54,13 @@ video {
     justify-content: space-between;
 }
 
+.recommence {
+    width: 90%;
+    margin: 15px 30px 5px 30px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 button {
     width: 130px;
     height: 30px;
@@ -66,3 +74,16 @@ button {
 button:hover {
     background-color: #171717c0;
 }
+
+.coche {
+    width: 90%;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.output {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: lighter;
+}
+

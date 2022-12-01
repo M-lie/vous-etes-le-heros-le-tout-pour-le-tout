@@ -189,6 +189,9 @@ let chaptersObj = {
     }
 };
 
+const btns = document.querySelectorAll("button");
+const effet = new Audio("assets/effet.mp3");
+
 function goToChapter(chapterName){ 
     console.log(chaptersObj[chapterName]["subtitle"]);
     console.log(chaptersObj[chapterName]["text"]);
@@ -211,7 +214,7 @@ function goToChapter(chapterName){
         bouton.setAttribute("type", "button");
         bouton.appendChild(document.createTextNode(element["text"]));
         barre.appendChild(bouton);
-        localStorage.setItem("chaptersObj", chapterName);
+        localStorage.setItem("nomChapitre", chapterName);
     };
 
     if (chaptersObj[chapterName].video!=undefined) {
@@ -220,9 +223,6 @@ function goToChapter(chapterName){
         image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
     };
 
-    const btns = document.querySelectorAll("button");
-    const effet = new Audio("assets/effet.mp3");
-
     for(const button of btns){
     button.addEventListener("click", function() {
         effet.currentTime = 0;
@@ -230,13 +230,13 @@ function goToChapter(chapterName){
     });
     };
 
-    let chapterExist = localStorage.getItem("chaptersObj");
+    let chapterExist = localStorage.getItem("nomChapitre");
     if (chapterExist==null) {
         goToChapter("chapter1");
         console.log("chapter1");
     } else {
-        goToChapter(chapterExist);
-        console.log(chapterExist);
+        goToChapter("chapterExist");
+        console.log("chapterExist");
     };
 }
 
@@ -244,7 +244,7 @@ goToChapter("chapter1");
 
 let scissorsFounded = false;
 
-let scissorsExist = localStorage.getItem("scissorsFounded");
+let scissorsExist = localStorage.getItem("ciseauxTrouves");
 if (scissorsExist==null) {
     scissorsFounded = false;
 } else {
@@ -254,7 +254,7 @@ if (scissorsExist==null) {
 function scissorsFound() {
     scissorsFounded = true;
     goToChapter("chapter7");
-    localStorage.setItem("scissorsFounded", scissorsFounded);
+    localStorage.setItem("ciseauxTrouves", scissorsFounded);
 };
 
 function scissorsStatus() {
@@ -262,8 +262,8 @@ function scissorsStatus() {
         goToChapter("chapter9");
     } else {
         goToChapter("chapter8");
-    }
-    localStorage.setItem("scissorsFounded", scissorsFounded);
+    };
+    localStorage.setItem("ciseauxTrouves", scissorsFounded);
 };
 
 function scissorsPossession() {
@@ -271,6 +271,38 @@ function scissorsPossession() {
         goToChapter("chapter17");
     } else {
         goToChapter("chapter18");
-    }
-    localStorage.setItem("scissorsFounded", scissorsFounded);
+    };
+    localStorage.setItem("ciseauxTrouves", scissorsFounded);
 };
+
+function reset() {
+    scissorsFounded = false;
+    localStorage.clear();
+    goToChapter("chapter1");
+}
+
+let audioWanted = true;
+for(const button of btns){
+    button.addEventListener("click", function() {
+        if(audioWanted==true){
+           effet.currentTime = 0;
+           effet.play();
+        } else {
+           effet.paused();
+        };
+});
+};
+
+const input = document.querySelector(".input");
+const output = document.querySelector(".output");
+
+input.addEventListener('change', function() {
+  if(input==checked){
+    effet.currentTime = 0;
+    effet.play();
+  } else {
+    effet.paused();
+  };
+});
+
+
