@@ -191,6 +191,7 @@ let chaptersObj = {
 
 const btns = document.querySelectorAll("button");
 const effet = new Audio("assets/effet.mp3");
+let scissorsFounded = false;
 
 function goToChapter(chapterName){ 
     console.log(chaptersObj[chapterName]["subtitle"]);
@@ -241,8 +242,6 @@ function goToChapter(chapterName){
 }
 
 goToChapter("chapter1");
-
-let scissorsFounded = false;
 
 let scissorsExist = localStorage.getItem("ciseauxTrouves");
 if (scissorsExist==null) {
