@@ -11,7 +11,7 @@ let chaptersObj = {
         img: "assets/chapitre_1.jpg",
         options: [{
             text: "Commencer", 
-            action: "goToChapter('chapter2')",
+            action: "scissorsNotFound()",
         }]
     },
     chapter2: {
@@ -189,8 +189,6 @@ let chaptersObj = {
     }
 };
 
-const btns = document.querySelectorAll("button");
-const effet = new Audio("assets/effet.mp3");
 let scissorsFounded = false;
 
 function goToChapter(chapterName){ 
@@ -224,14 +222,18 @@ function goToChapter(chapterName){
         image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
     };
 
+    const btnsArr = document.querySelectorAll("button");
+    const effet = new Audio("assets/effet.mp3");
+
     let audio = document.querySelector(".audio");
 
-    for(const button of btns){
+    for(const button of btnsArr){
     button.addEventListener("click", function() {
         if (audio.checked == true) {
-            effet.currentTime = 0;
+            /*effet.currentTime = 0;*/
             effet.play();
-        } else {
+        } 
+        if (audio.checked == false) {
             effet.pause();
         }
     });
@@ -256,7 +258,7 @@ let scissorsExist = localStorage.getItem("scissorsFounded");
 if (scissorsExist==null) {
     scissorsFounded = false;
 } else {
-    scissorsFounded=Boolean(scissorsFounded)
+    scissorsFounded = Boolean(scissorsFounded)
 };
     
 function scissorsFound() {
@@ -265,10 +267,16 @@ function scissorsFound() {
     localStorage.setItem("scissorsFounded", scissorsFounded);
 };
 
+function scissorsNotFound() {
+    scissorsFounded = false;
+    goToChapter("chapter2");
+    localStorage.setItem("scissorsFounded", scissorsFounded);
+}
+
 function scissorsStatus() {
     if (scissorsFounded == true) {
         goToChapter("chapter9");
-    } else {
+    } if (scissorsFounded == false) {
         goToChapter("chapter8");
     };
     localStorage.setItem("scissorsFounded", scissorsFounded);
