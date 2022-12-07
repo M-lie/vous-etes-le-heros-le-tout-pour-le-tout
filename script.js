@@ -230,11 +230,7 @@ function goToChapter(chapterName){
     for(const button of btnsArr){
     button.addEventListener("click", function() {
         if (audio.checked == true) {
-<<<<<<< HEAD
             effet.currentTime = 0;
-=======
-            /*effet.currentTime = 0;*/
->>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
             effet.play();
         } 
         if (audio.checked == false) {
@@ -244,22 +240,14 @@ function goToChapter(chapterName){
     };
 
     let body = document.querySelector("body");
-<<<<<<< HEAD
     body.className = "";
     body.classList.add(chapterName);
-=======
-    body.setAttribute("class", [chapterName]);
->>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
 }
 
 goToChapter("chapter1");
 
 let chapterExist = localStorage.getItem("chaptersObj");
-<<<<<<< HEAD
     if (chapterExist == null) {
-=======
-    if (chapterExist==null) {
->>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
         goToChapter("chapter1");
         console.log("chapter1");
     } else {
@@ -268,11 +256,7 @@ let chapterExist = localStorage.getItem("chaptersObj");
     };
 
 let scissorsExist = localStorage.getItem("scissorsFounded");
-<<<<<<< HEAD
 if (scissorsExist == null) {
-=======
-if (scissorsExist==null) {
->>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
     scissorsFounded = false;
 } else {
     scissorsFounded = Boolean(scissorsFounded)
@@ -314,10 +298,7 @@ function reset() {
     goToChapter("chapter1");
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
 
 
