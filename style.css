@@ -13,7 +13,11 @@ html, body {
 
 .game {
     width: 600px;
+<<<<<<< HEAD
     height: 720px;
+=======
+    height: 750px;
+>>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
     padding: 30px 0px;
     background-color: #FE0202;
 }
@@ -85,6 +89,7 @@ button:hover {
     font-weight: lighter;
 }
 
+<<<<<<< HEAD
 .chapter1 {
     position: absolute;
     background-image: url(assets/fond_chapitre_1.jpg);
@@ -160,3 +165,6 @@ button:hover {
 }
 
 
+=======
+.chapter
+>>>>>>> 303de84c1d03fddf70f27e3405544fb92aa43fa7
