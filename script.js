@@ -11,7 +11,7 @@ let chaptersObj = {
         img: "assets/chapitre_1.jpg",
         options: [{
             text: "Commencer", 
-            action: "goToChapter('chapter2')",
+            action: "scissorsNotFound()",
         }]
     },
     chapter2: {
@@ -189,8 +189,7 @@ let chaptersObj = {
     }
 };
 
-const btns = document.querySelectorAll("button");
-const effet = new Audio("assets/effet.mp3");
+let scissorsFounded = false;
 
 function goToChapter(chapterName){ 
     console.log(chaptersObj[chapterName]["subtitle"]);
@@ -214,7 +213,7 @@ function goToChapter(chapterName){
         bouton.setAttribute("type", "button");
         bouton.appendChild(document.createTextNode(element["text"]));
         barre.appendChild(bouton);
-        localStorage.setItem("nomChapitre", chapterName);
+        localStorage.setItem("chaptersObj", chapterName);
     };
 
     if (chaptersObj[chapterName].video!=undefined) {
@@ -223,47 +222,65 @@ function goToChapter(chapterName){
         image.innerHTML = `<img src="${chaptersObj[chapterName].img}"/>`;
     };
 
-    for(const button of btns){
+    const btnsArr = document.querySelectorAll("button");
+    const effet = new Audio("assets/effet.mp3");
+
+    let audio = document.querySelector(".audio");
+
+    for(const button of btnsArr){
     button.addEventListener("click", function() {
-        effet.currentTime = 0;
-        effet.play();
+        if (audio.checked == true) {
+            effet.currentTime = 0;
+            effet.play();
+        } 
+        if (audio.checked == false) {
+            effet.pause();
+        }
     });
     };
 
-    let chapterExist = localStorage.getItem("nomChapitre");
-    if (chapterExist==null) {
+    let body = document.querySelector("body");
+    body.className = "";
+    body.classList.add(chapterName);
+}
+
+goToChapter("chapter1");
+
+let chapterExist = localStorage.getItem("chaptersObj");
+    if (chapterExist == null) {
         goToChapter("chapter1");
         console.log("chapter1");
     } else {
         goToChapter("chapterExist");
         console.log("chapterExist");
     };
-}
 
-goToChapter("chapter1");
-
-let scissorsFounded = false;
-
-let scissorsExist = localStorage.getItem("ciseauxTrouves");
-if (scissorsExist==null) {
+let scissorsExist = localStorage.getItem("scissorsFounded");
+if (scissorsExist == null) {
     scissorsFounded = false;
 } else {
-    scissorsFounded=Boolean(scissorsFounded)
+    scissorsFounded = Boolean(scissorsFounded)
 };
     
 function scissorsFound() {
     scissorsFounded = true;
     goToChapter("chapter7");
-    localStorage.setItem("ciseauxTrouves", scissorsFounded);
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 };
+
+function scissorsNotFound() {
+    scissorsFounded = false;
+    goToChapter("chapter2");
+    localStorage.setItem("scissorsFounded", scissorsFounded);
+}
 
 function scissorsStatus() {
     if (scissorsFounded == true) {
         goToChapter("chapter9");
-    } else {
+    } if (scissorsFounded == false) {
         goToChapter("chapter8");
     };
-    localStorage.setItem("ciseauxTrouves", scissorsFounded);
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 };
 
 function scissorsPossession() {
@@ -272,37 +289,16 @@ function scissorsPossession() {
     } else {
         goToChapter("chapter18");
     };
-    localStorage.setItem("ciseauxTrouves", scissorsFounded);
+    localStorage.setItem("scissorsFounded", scissorsFounded);
 };
 
 function reset() {
-    scissorsFounded = false;
+    localStorage.removeItem("scissorsFounded", scissorsFounded);
     localStorage.clear();
     goToChapter("chapter1");
 }
 
-let audioWanted = true;
-for(const button of btns){
-    button.addEventListener("click", function() {
-        if(audioWanted==true){
-           effet.currentTime = 0;
-           effet.play();
-        } else {
-           effet.paused();
-        };
-});
-};
 
-const input = document.querySelector(".input");
-const output = document.querySelector(".output");
 
-input.addEventListener('change', function() {
-  if(input==checked){
-    effet.currentTime = 0;
-    effet.play();
-  } else {
-    effet.paused();
-  };
-});
 
 
